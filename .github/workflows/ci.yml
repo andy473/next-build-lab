@@ -6,8 +6,24 @@ on:
       - main
 
 jobs:
-  hello-world:
+  explore-runner:
     runs-on: ubuntu-latest
 
     steps:
-      - run: echo "Hello from GitHub Actions 🚀"
+      - name: Print current directory (before checkout)
+        run: pwd
+
+      - name: List files (before checkout)
+        run: ls -la
+
+      - name: Checkout repository
+        run: actions/checkout@v4
+        
+      - name: Print current directory (after checkout)
+        run: pwd
+
+      - name: List files (after checkout)
+        run: ls -la
+
+      - name: Show package.json
+        run: cat package.json
