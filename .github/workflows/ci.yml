@@ -19,6 +19,15 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Node version
+        run: node -v
+
+      - name: npm version
+        run: npm -v
+
+      - name: pnpm version
+        run: pnpm -v
+
       - name: Print current directory (after checkout)
         run: pwd
 
