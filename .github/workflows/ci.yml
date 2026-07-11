@@ -10,29 +10,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Print current directory (before checkout)
-        run: pwd
+      - uses: actions/checkout@v4
 
-      - name: List files (before checkout)
-        run: ls -la
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
 
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
 
-      - name: Node version
-        run: node -v
-
-      - name: npm version
-        run: npm -v
-
-      - name: pnpm version
-        run: pnpm -v
-
-      - name: Print current directory (after checkout)
-        run: pwd
-
-      - name: List files (after checkout)
-        run: ls -la
-
-      - name: Show package.json
-        run: cat package.json
+      - name: Verify tools
+        run: |
+          node -v
+          npm -v
+          pnpm -v
