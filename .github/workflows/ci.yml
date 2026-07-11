@@ -1,4 +1,4 @@
-name: CI
+name: My First CI
 
 on:
   push:
@@ -6,8 +6,8 @@ on:
       - main
 
 jobs:
-  hello:
+  hello-world:
     runs-on: ubuntu-latest
 
     steps:
-      - run: echo "Hello from GitHub Actions!"
+      - run: echo "Hello from GitHub Actions 🚀"
